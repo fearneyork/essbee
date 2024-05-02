@@ -1,0 +1,22 @@
+{
+  "name": "storyblok-cli",
+  "version": "1.0.0",
+  "description": "storyblok cli POC",
+  "main": "/bin/index.js",
+  "bin": {
+    "sbCli": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fearneyork/storyblok-cli.git"
+  },
+  "author": "F.C.York",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fearneyork/storyblok-cli/issues"
+  },
+  "homepage": "https://github.com/fearneyork/storyblok-cli#readme"
+}

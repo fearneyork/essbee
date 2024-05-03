@@ -4,7 +4,7 @@ import inquirer from "inquirer";
 
 const log = console.log;
 const sbLogo = `
- ____________
+ _____________
 |  _______    |
 | |   __  \\   |
 | |  |__) /   |

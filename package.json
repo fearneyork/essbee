@@ -25,6 +25,7 @@
     "commander": "^12.0.0",
     "inquirer": "^9.2.20",
     "ora": "^8.0.1",
-    "storyblok": "^3.30.0"
+    "storyblok": "^3.30.0",
+    "ts-node": "^10.9.2"
   }
 }

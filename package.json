@@ -2,9 +2,10 @@
   "name": "storyblok-cli",
   "version": "1.0.0",
   "description": "storyblok cli POC",
-  "main": "/bin/index.js",
+  "exports": "./bin/index.js",
+  "type": "module",
   "bin": {
-    "sbCli": "./bin/index.js"
+    "sbCli": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/fearneyork/storyblok-cli/issues"
   },
-  "homepage": "https://github.com/fearneyork/storyblok-cli#readme"
+  "homepage": "https://github.com/fearneyork/storyblok-cli#readme",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "inquirer": "^9.2.20",
+    "ora": "^8.0.1"
+  }
 }

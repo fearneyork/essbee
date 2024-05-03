@@ -1,5 +1,5 @@
 {
-  "name": "storyblok-cli",
+  "name": "aae-sb-cli",
   "version": "1.0.0",
   "description": "storyblok cli POC",
   "exports": "./bin/index.js",

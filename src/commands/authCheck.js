@@ -6,6 +6,8 @@ import { runCommand } from "./runCommand.js";
 
 //use subProcess to handle shell commands from node
 // TODO: extract out the auth email at the end, maybe split on space and take last index
+//
+let isAuthed = false;
 
 const getPatPrompt = () =>
   inquirer.prompt([
@@ -27,20 +29,20 @@ async function ssoSignIn() {
   await getPatPrompt().then(async ({ signIn, pat }) => {
     const spinner = ora("Signing in to Storyblok").start();
     spinner.spinner = "clock";
-    // if (signIn) {
     signIn &&
       subProcess.exec(`storyblok login --token ${pat} --region eu`, (error) => {
         if (error) {
           console.error(error);
           process.exit(1);
         }
-        spinner.succeed("Successfully signed in to Storyblok");
+        spinner.succeed(
+          `Successfully signed in to Storyblok. Re-run ${chalk.magenta(`sbCli`)} to continue.`,
+        );
       });
-    // }
   });
 }
 
-export async function authCheck() {
+export default async function authCheck() {
   const spinner = ora("Checking your storyblok-cli auth status").start();
   spinner.spinner = "clock";
 
@@ -49,6 +51,7 @@ export async function authCheck() {
     try {
       const email = stdout.toString().split(" ").slice(-1)[0];
       if (email.match(emailRegex)) {
+        isAuthed = true;
         spinner.succeed(`Storyblok user logged in as: ${chalk.green(email)}`);
       } else {
         spinner.fail(`Storyblok user not logged in.`);
@@ -61,5 +64,5 @@ export async function authCheck() {
     spinner.stop();
   });
   // wait for spinner to stop spinning before running the next command
-  setTimeout(() => !spinner.isSpinning && runCommand(), "1500");
+  setTimeout(() => !spinner.isSpinning && isAuthed && runCommand(), "1500");
 }

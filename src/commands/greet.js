@@ -13,7 +13,7 @@ const sbLogo = `
 |_  __________|
   |/`;
 
-export async function greet() {
+export default async function greet() {
   const user = userInfo().username;
 
   log(chalk.cyan(sbLogo));

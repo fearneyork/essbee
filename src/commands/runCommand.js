@@ -1,19 +1,33 @@
 import inquirer from "inquirer";
-// import ora from "ora";
 
 export async function runCommand() {
-  console.log("runCommand");
-
   inquirer
     .prompt([
       {
         type: "list",
         name: "whichCommand",
         message: "What would you like to do?",
-        choices: ["Pull components from a storyblok space", "abc", "xyz"],
+        choices: [
+          { name: "pull components", value: "pull-components" },
+          { name: "abc", value: "abc" },
+          { name: "xyz", value: "xyz" },
+        ],
+      },
+      {
+        type: "list",
+        name: "whichSpace",
+        message: "Which space would you like to pull components from?",
+        choices: [
+          { name: "dev", value: "132543" },
+          { name: "prod", value: "143588" },
+        ],
+        when: (answers) => answers.whichCommand === "pull-components",
       },
     ])
-    .then((answers) => {
-      console.log(answers);
+    .then(({ whichCommand, whichSpace }) => {
+      if (whichCommand === "pull-components")
+        console.log(`Pulling components from ${whichSpace}`);
+      if (whichCommand === "abc") console.log("abc");
+      if (whichCommand === "xyz") console.log("xyz");
     });
 }

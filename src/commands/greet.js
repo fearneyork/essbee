@@ -1,8 +1,7 @@
 import { userInfo } from "os";
 import chalk from "chalk";
-import inquirer from "inquirer";
+import { log } from "console";
 
-const log = console.log;
 const sbLogo = `
  _____________
 |  _______    |

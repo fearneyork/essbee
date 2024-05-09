@@ -37,7 +37,8 @@ function ssoSignIn() {
           },
         );
       }
-    });
+    })
+    .complete();
 }
 
 export async function authCheck() {

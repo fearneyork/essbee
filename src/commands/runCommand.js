@@ -1,6 +1,7 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 import pullComponents from "./pullComponents.js";
+import clean from "./clean.js";
 
 const prompts = [
   {
@@ -9,7 +10,7 @@ const prompts = [
     message: "What would you like to do?",
     choices: [
       { name: "pull components", value: "pull-components" },
-      { name: "abc", value: "abc" },
+      // { name: "abc", value: "abc" },
       { name: `${chalk.red("clean up temp directory")}`, value: "clean" },
     ],
   },
@@ -43,7 +44,7 @@ export async function runCommand() {
     .then(({ whichCommand, whichSpace, isSeparateFiles }) => {
       if (whichCommand === "pull-components")
         pullComponents(whichSpace, isSeparateFiles);
-      if (whichCommand === "abc") console.log("abc");
-      if (whichCommand === "xyz") console.log("xyz");
+      // if (whichCommand === "abc") console.log("abc");
+      if (whichCommand === "clean") clean();
     });
 }

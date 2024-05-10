@@ -4,9 +4,6 @@ import chalk from "chalk";
 import inquirer from "inquirer";
 import { runCommand } from "./runCommand.js";
 
-//use subProcess to handle shell commands from node
-// TODO: extract out the auth email at the end, maybe split on space and take last index
-//
 let isAuthed = false;
 
 const getPatPrompt = () =>

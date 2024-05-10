@@ -4,8 +4,10 @@ A CLI tool for Storyblok. Built specifically to help with the migration of compo
 
 ## Installation
 
+This CLI tool is designed to be able to be used from anywhere on your machine. To install it, you can run the following command to install it globally:
+
 ```zsh
-npm i
+npm install -g
 ```
 
 ## Usage

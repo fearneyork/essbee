@@ -15,7 +15,6 @@ export default async function cliCheck() {
       spinner.fail("Storyblok CLI not found.");
     }
     if (stdout) {
-      log(stdout);
       spinner.succeed("Storyblok CLI found.");
       isInstalled = true;
     }

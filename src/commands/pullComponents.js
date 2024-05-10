@@ -6,7 +6,7 @@ export default async function pullComponents(spaceId, isSeparateFiles) {
   const sfFlag = isSeparateFiles ? "--separate-files" : "";
   const devOrProd = spaceId === "132543" ? "dev" : "prod";
   const sbCommand = `storyblok pull-components --space ${spaceId} ${sfFlag}`;
-  const timestamp = format(Date.now(), "dd-mm-yyyy_hh-mm-ss");
+  const timestamp = format(Date.now(), "dd-MM-yyyy_HH-mm-ss");
 
   subProcess.exec(
     `cd ~/Desktop && mkdir -p temp_storyblok_cli/${devOrProd}_${timestamp}`,

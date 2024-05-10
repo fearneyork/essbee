@@ -1,11 +1,12 @@
 import subProcess from "child_process";
 import ora from "ora";
+import { format } from "date-fns";
 
 export default async function pullComponents(spaceId, isSeparateFiles) {
   const sfFlag = isSeparateFiles ? "--separate-files" : "";
   const devOrProd = spaceId === "132543" ? "dev" : "prod";
   const sbCommand = `storyblok pull-components --space ${spaceId} ${sfFlag}`;
-  const timestamp = Date.now();
+  const timestamp = format(Date.now(), "dd-mm-yyyy_hh-mm-ss");
 
   subProcess.exec(
     `cd ~/Desktop && mkdir -p temp_storyblok_cli/${devOrProd}_${timestamp}`,

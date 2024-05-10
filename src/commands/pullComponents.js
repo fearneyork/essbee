@@ -1,20 +1,37 @@
 import subProcess from "child_process";
+import ora from "ora";
 
 export default async function pullComponents(spaceId, isSeparateFiles) {
-  console.log(
-    `Pulling components from ${spaceId} and separate files is ${isSeparateFiles}...`,
-  );
   const sfFlag = isSeparateFiles ? "--separate-files" : "";
   const sbCommand = `storyblok pull-components --space ${spaceId} ${sfFlag}`;
-  console.log(sbCommand);
+  const timestamp = Date.now();
 
-  //TODO: add check in for if temp_storyblok_cli exists, if it does advise user to clean it up
-
-  //TODO: add spinner in on wait for command to finish
   subProcess.exec(
-    `cd ~/Desktop && ls -a && mkdir temp_storyblok_cli && cd temp_storyblok_cli && ${sbCommand}`,
+    `cd ~/Desktop && mkdir -p temp_storyblok_cli/${timestamp}`,
     (error, stdout, stderr) => {
-      console.log(stdout);
+      const spinner = ora("Making directory...").start();
+      spinner.spinner = "clock";
+      if (error) {
+        console.error(error);
+        process.exit(1);
+      }
+      spinner.succeed(`Directory created.`);
     },
   );
+  setTimeout(() => {
+    subProcess.exec(
+      `cd ~/Desktop/temp_storyblok_cli/${timestamp} && ${sbCommand}`,
+      (error, stdout, stderr) => {
+        const spinner = ora("Pulling component JSON...").start();
+        spinner.spinner = "clock";
+        if (error) {
+          console.error(error);
+          process.exit(1);
+        }
+        spinner.succeed(
+          `Components pulled. Find them in ~/Desktop/temp_storyblok_cli/${timestamp}`,
+        );
+      },
+    );
+  }, 1500);
 }

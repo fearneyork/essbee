@@ -1,4 +1,4 @@
-# storyblok-cli
+# essbee
 
 A CLI tool for Storyblok. Built specifically to help with the migration of components from one space to another.
 

@@ -17,5 +17,9 @@ export default async function greet() {
   const user = userInfo().username;
 
   log(chalk.cyan(sbLogo));
-  log("Hello,", chalk.yellow(`${user}!`), "Welcome to the A&E Storyblok CLI!");
+  log(
+    "Hello,",
+    chalk.yellow(`${user}! 👋`),
+    `\nWelcome to the ${chalk.cyan("🐍 essbee 🐝")} CLI!`,
+  );
 }

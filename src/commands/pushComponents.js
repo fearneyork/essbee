@@ -8,15 +8,17 @@ export default async function pushComponents() {
   subProcess.exec(
     `ls ~/Desktop/temp_storyblok_cli`,
     (error, stdout, stderr) => {
-      if (error) {
-        console.error(error);
+      const isDirAvailable = !stderr.includes("No such file or directory");
+      if (stderr && !isDirAvailable) {
+        console.error(
+          "No such file or directory. Please pull components first.",
+        );
         process.exit(1);
       }
       dirsArr.push(...stdout.toString().split("\n").slice(0, -1));
     },
   );
 
-  // console.log(dirsArr);
   setTimeout(() => {
     inquirer
       .prompt([

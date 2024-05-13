@@ -1,11 +1,11 @@
 {
-  "name": "aae-sb-cli",
+  "name": "essbee",
   "version": "1.0.0",
   "description": "storyblok cli POC",
   "exports": "./bin/index.js",
   "type": "module",
   "bin": {
-    "sbCli": "./index.js"
+    "essbee": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -4,9 +4,7 @@
   "description": "storyblok wrapper cli POC",
   "exports": "./bin/index.js",
   "type": "module",
-  "bin": {
-    "essbee": "./bin/index.js"
-  },
+  "bin": "./bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,6 +23,7 @@
     "commander": "^12.0.0",
     "date-fns": "^3.6.0",
     "inquirer": "^9.2.20",
+    "inquirer-search-checkbox": "^1.0.0",
     "ora": "^8.0.1"
   }
 }

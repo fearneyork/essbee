@@ -44,7 +44,7 @@ export default async function authCheck() {
   spinner.spinner = "clock";
 
   subProcess.exec(`storyblok user`, (error, stdout, stderr) => {
-    const emailRegex = new RegExp(/\b[\w\.-]+@cinch\.\w{2,4}\b/gi);
+    const emailRegex = new RegExp(/\b[\w\.-]+@[\w\.-]\.\w{2,4}\b/gi);
     try {
       const email = stdout.toString().split(" ").slice(-1)[0];
       if (email.match(emailRegex)) {

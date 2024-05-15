@@ -50,6 +50,14 @@ This will pull all components from the source space you specify (either dev or p
 
 These files will be saved to the `~/Desktop/temp_storyblok_cli` directory at a subdirectory of `<space>_<date-timestamp>`, e.g. `dev_10-05-2024_12-00-00`.
 
+#### push components
+
+This will push selected components from the source directory you specify, to the target space you specify (either dev or prod).
+
+#### pull and push content
+
+This is a Todo, as it isn't core functionality we care about right now. But will be a feature in the future.
+
 #### clean up temp directory
 
 This will help you clean up the temp files that are created when pulling components.

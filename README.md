@@ -7,6 +7,12 @@ A CLI tool for Storyblok. Built specifically to help with the migration of compo
 This CLI tool is designed to be able to be used from anywhere on your machine. To install it, you can run the following command to install it globally:
 
 ```zsh
+npm i essbee -g
+```
+
+Or you can clone the repo and install it globally using the following command:
+
+```zsh
 npm install -g
 ```
 

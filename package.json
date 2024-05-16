@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/fearneyork/essbee/issues"
   },
+  "keywords": ["storyblok", "cli", "wrapper"],
   "homepage": "https://github.com/fearneyork/essbee#readme",
   "dependencies": {
     "chalk": "^5.3.0",

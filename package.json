@@ -1,6 +1,6 @@
 {
   "name": "essbee",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "storyblok wrapper cli POC",
   "exports": "./bin/index.js",
   "type": "module",
